@@ -31,6 +31,16 @@ boot-oauth2-github-master
   - Spring microservice that manages the OAuth log in using Github account
 employee-app
   - Helidon microservice that manage CRUD operations on Employee and Article entity;
+  The back end of the application is a microservice that's coded in Java and uses libraries from the Helidon project
+  The core of the application is the Main class and the EmployeeService class. The Main class loads the microservice and starts a Netty web server. The EmployeeService class defines the end points for the application and handles requests and responses. The application has only one microservice. But, a typical production application is likely to contain more services.
+
+Note that the application is designed to be stateless. All data should be pushed to the database for persistence. This approach allows you to scale the application easily.
+
+employee-app
+
+The application implements the data access object (DAO) pattern and can be configured for two persistence stores. By default, the application uses a mock database written with in-memory ArrayList classes so you can test the application locally or in a Kubernetes cluster without a database connection. This configuration is selected in the src\main\resources\application.yaml file by setting the drivertype to Array. This guide only covers the ArrayList version of the application without a formal database.
+
+To connect the application to an Oracle database, edit the src\main\resources\application.yaml file, fill the user, password, and hosturl properties and set the drivertype property to Oracle. This application configuration allows you to use an Oracle database as a persistence store. The code for using an Oracle database for persistence is not covered in this guide.
 
 # Authorization
 The application uses a separate Spring microservice for authorization based on OAuth.
@@ -38,3 +48,8 @@ The user needs to authentiticate using his Github account and only eventually ge
 
 Auth0 is a flexible, drop-in solution to add authentication and authorization services to the server-side application.
 A new application and client id were registered in Github in order for the process to work.
+![Capture](https://user-images.githubusercontent.com/49560400/154705583-e647245f-3b80-4fa3-8fec-77b664aae851.PNG)
+
+# Technologies:
+Microservices: Helidon, Sring
+
