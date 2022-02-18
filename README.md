@@ -70,7 +70,9 @@ docker run -p8811:8811 authentication-server:latest
 # Access application via Browser or Postman
 localhost:8811
 
-# UML Class diagrams
+# UML
+
+![6](https://user-images.githubusercontent.com/49560400/154723185-b104c1c0-01a1-4a6c-a6e9-39d5684b579a.PNG)
 
 ![3](https://user-images.githubusercontent.com/49560400/154715578-5ac32e62-8deb-4255-b0d6-befb81f90c9f.PNG)
 ![4](https://user-images.githubusercontent.com/49560400/154715586-2f879dde-377d-4e5c-a59d-a1f32d2a12cb.PNG)
