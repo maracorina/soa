@@ -7,6 +7,11 @@ Web Application
 
 # Description
 Employee Articles Management System is an application based on microservices created in Java with Helidon and Spring.
+The application has 3 main parts:
+  - An authentication microservice back end (based on Spring Boot)
+  - A management microservice back end (written in Java using Helidon)
+  - A web service client (written in HTML, CSS and JavaScript)
+The two parts demonstrate how a front end interacts with a microservices back end.
 
 At the frontend level, it uses a Web Client based on html and javascript.
 
@@ -36,8 +41,7 @@ employee-app
 
 Note that the application is designed to be stateless. All data should be pushed to the database for persistence. This approach allows you to scale the application easily.
 
-employee-app
-
+![2](https://user-images.githubusercontent.com/49560400/154707481-980bff57-a089-485f-94f6-9eedcbc36285.PNG)
 The application implements the data access object (DAO) pattern and can be configured for two persistence stores. By default, the application uses a mock database written with in-memory ArrayList classes so you can test the application locally or in a Kubernetes cluster without a database connection. This configuration is selected in the src\main\resources\application.yaml file by setting the drivertype to Array. This guide only covers the ArrayList version of the application without a formal database.
 
 To connect the application to an Oracle database, edit the src\main\resources\application.yaml file, fill the user, password, and hosturl properties and set the drivertype property to Oracle. This application configuration allows you to use an Oracle database as a persistence store. The code for using an Oracle database for persistence is not covered in this guide.
@@ -52,4 +56,35 @@ A new application and client id were registered in Github in order for the proce
 
 # Technologies:
 Microservices: Helidon, Sring
+WebClient: HTML, Javascript
 
+# Docker
+For Microservices go to
+--> employee-app and run:
+docker build -t employee-app .  
+docker run --rm -p 8081:8081 employee-app:latest
+--> boot-oauth2-github-master and run:
+docker build --tag=authentication-server:latest .
+docker run -p8811:8811 authentication-server:latest
+
+# Access application via Browser or Postman
+localhost:8811
+
+# UML Class diagrams
+
+# C4 Model
+
+# Conclusion
+The web server is build in Java using Helidon and Spring and it exposes REST services.
+
+The client you use to access the microservice is coded using HTML, CSS, and JavaScript.
+
+The application is written using a combination of BootStrap and jQuery. The application client is included with the source of the Java back end. When the application is built, the application directory is copied to the /public directory and is available to load from your browser at http://hostname:8081/public/index.html.
+
+We used independent docker containers along with docker images in order to deploy the solution on localhost.
+
+
+## 👤 Author
+
+Mara Corina-Ioana
+/ *mara_corina_ioana@yahoo.com*
