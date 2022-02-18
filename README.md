@@ -54,7 +54,7 @@ Auth0 is a flexible, drop-in solution to add authentication and authorization se
 A new application and client id were registered in Github in order for the process to work.
 ![Capture](https://user-images.githubusercontent.com/49560400/154705583-e647245f-3b80-4fa3-8fec-77b664aae851.PNG)
 
-# Technologies:
+# Technologies
 Microservices: Helidon, Sring
 WebClient: HTML, Javascript
 
@@ -72,7 +72,12 @@ localhost:8811
 
 # UML Class diagrams
 
+![3](https://user-images.githubusercontent.com/49560400/154715578-5ac32e62-8deb-4255-b0d6-befb81f90c9f.PNG)
+![4](https://user-images.githubusercontent.com/49560400/154715586-2f879dde-377d-4e5c-a59d-a1f32d2a12cb.PNG)
+
 # C4 Model
+
+![5](https://user-images.githubusercontent.com/49560400/154715598-37a12e31-f3fe-4b0b-ac38-4bf5d46af4c7.PNG)
 
 # Conclusion
 The web server is build in Java using Helidon and Spring and it exposes REST services.
